@@ -1,0 +1,196 @@
+{
+  "Field Reset": [
+    {
+      "end": 1,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 2,
+      "start": 1
+    },
+    {
+      "end": 2,
+      "people": {},
+      "shirt": true,
+      "slots": 5,
+      "start": 2
+    },
+    {
+      "end": 3,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 5,
+      "start": 3
+    },
+    {
+      "end": 4,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 5,
+      "start": 4
+    },
+    {
+      "end": 5,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 5,
+      "start": 5
+    }
+  ],
+  "Field Setup": [
+    {
+      "end": 0,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 8,
+      "start": 0
+    },
+    {
+      "end": 1,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 3,
+      "start": 1
+    },
+    {
+      "end": 5,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 5,
+      "start": 5
+    },
+    {
+      "end": 6,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 5,
+      "start": 6
+    }
+  ],
+  "Pit Queuer": [
+    {
+      "end": 2,
+      "people": {},
+      "shirt": false,
+      "slots": 2,
+      "start": 2
+    },
+    {
+      "end": 3,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 2,
+      "start": 3
+    },
+    {
+      "end": 4,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 2,
+      "start": 4
+    },
+    {
+      "end": 5,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 2,
+      "start": 5
+    }
+  ],
+  "Pit Setup": [
+    {
+      "end": 0,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 8,
+      "start": 0
+    },
+    {
+      "end": 1,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 3,
+      "start": 1
+    },
+    {
+      "end": 5,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 5,
+      "start": 5
+    },
+    {
+      "end": 6,
+      "people": {
+      },
+      "shirt": false,
+      "slots": 5,
+      "start": 6
+    }
+  ],
+  "Practice Field Manager": [
+    {
+      "end": 1,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 1,
+      "start": 1
+    },
+    {
+      "end": 3,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 1,
+      "start": 2
+    },
+    {
+      "end": 5,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 1,
+      "start": 4
+    }
+  ],
+  "Skills Field Assistant": [
+    {
+      "end": 1,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 2,
+      "start": 1
+    },
+    {
+      "end": 3,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 2,
+      "start": 2
+    },
+    {
+      "end": 5,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 2,
+      "start": 4
+    }
+  ]
+}

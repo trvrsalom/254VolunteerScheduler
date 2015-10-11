@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>Bellarmine VEX Tournament | Student Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+  </head>
+  <body>
+    <div class="ui page grid">
+      <div class="sixteen wide column">
+        <div class="ui segment">
+          <table class="ui unstackable selectable celled structured table">
+            <thead>
+              <tr id="thead"></tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="ui modal">
+      <i class="close icon"></i>
+      <div class="header">
+        Confirm
+      </div>
+      <div class="content">
+        <div class="description">
+          <div class="ui header">Confirm your sign up:</div>
+          <p>You are signing up for the role of <span id="roleVerify"></span> during the following shifts:</p>
+          <div id="shiftVerify">
+
+          </div>
+          <div class="ui header">Please fill out this form:</div>
+          <div class="ui form">
+            <div class="four fields" id="form">
+              <div class="field">
+                <label>Name</label>
+                <input type="text" placeholder="Name" id="formName">
+              </div>
+              <div class="field">
+                <label>E-mail</label>
+                <input type="text" placeholder="E-mail" id=formEmail>
+              </div>
+              <div class="field">
+                <label>Student ID</label>
+                <input type="text" placeholder="Student ID" id="formStudentID">
+              </div>
+              <div class="field" id="shirt">
+                <label>Shirt Size</label>
+                <select class="ui dropdown">
+                  <option value="NA">Shirt Size</option>
+                  <option value="SM">SM</option>
+                  <option value="MD">MD</option>
+                  <option value="LG">LG</option>
+                  <option value="XL">XL</option>
+                  <option value="2XL">2XL</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="ui success message" id="goodNotif" style="display:none;">
+            <div class="header">Signup Complete</div>
+            <p>Thanks for signing up!</p>
+          </div>
+          <div class="ui error message" id="badNotif" style="display:none;">
+            <div class="header">Uh oh...</div>
+            <p id="errorMessage">Something went wrong.</p>
+          </div>
+        </div>
+        <br />
+        <div id="submitButtons">
+          <div class="ui black deny button">
+            Cancel
+          </div>
+          <div class="ui positive right labeled icon button" onclick="submit()">
+            Confirm
+            <i class="checkmark icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Javascript -->
+    <script src="js/jquery.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script>
+      var url = "http://localhost:3000"
+      var role = "students"
+      $('select.dropdown').dropdown();
+    </script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
