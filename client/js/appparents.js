@@ -63,9 +63,9 @@ function signUp(roleId, shiftId) {
 
 function getShifts() {
   $.get(url + "/blocks", function(data) {
-    $("#thead").append("<th></th>")
+    $("#tablehead").append("<th></th>")
     for(var i = 0; i < data.blocks.length; i++) {
-      $("#thead").append("<th>" + data.blocks[i] + "</th>");
+      $("#tablehead").append("<th>" + data.blocks[i] + "</th>");
       blocks = data.blocks.length;
     }
   });
