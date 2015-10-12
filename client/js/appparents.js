@@ -3,12 +3,17 @@ var gRole = "";
 var gShiftId = 0;
 var shirts = true;
 
+function sanitizeString(str){
+  str = str.replace(/([^a-z0-9áéíóúñü_-\s\.,]|[\t\n\f\r\v\0])/gim,"");
+  return str.trim();
+}
+
 function showShirts() {
   shirts = true;
   $("#form").removeClass("two");
   $("#form").addClass("three");
   $("#shirt").show();
-}
+sanitizeString}
 
 function hideShirts() {
   shirts = false;
@@ -18,7 +23,7 @@ function hideShirts() {
 }
 
 function submit() {
-  var subdata = {"name" : $("#formName").val(), "email": $("#formEmail").val(), "shirtsize": $('.ui.dropdown' ).dropdown('get value')};
+  var subdata = {"name" : sanitizeString($("#formName").val()), "email": sanitizeString($("#formEmail").val()), "shirtsize": sanitizeString($('.ui.dropdown' ).dropdown('get value'))};
   $.post(url + "/roles/" + role + "/" + gRole + "/" + gShiftId, subdata)
     .done(function(data){
       if(data.success) {
