@@ -1,19 +1,11 @@
 {
   "Field Queuing": [
     {
-      "end": 1,
-      "people": {
-      },
-      "shirt": true,
-      "slots": 1,
-      "start": 1
-    },
-    {
       "end": 2,
       "people": {
       },
       "shirt": true,
-      "slots": 1,
+      "slots": 3,
       "start": 2
     },
     {
@@ -21,7 +13,7 @@
       "people": {
       },
       "shirt": true,
-      "slots": 1,
+      "slots": 3,
       "start": 3
     },
     {
@@ -29,7 +21,7 @@
       "people": {
       },
       "shirt": true,
-      "slots": 1,
+      "slots": 3,
       "start": 4
     },
     {
@@ -37,7 +29,7 @@
       "people": {
       },
       "shirt": true,
-      "slots": 1,
+      "slots": 3,
       "start": 5
     }
   ],
@@ -65,7 +57,7 @@
       "people": {
       },
       "shirt": true,
-      "slots": 2,
+      "slots": 3,
       "start": 3
     },
     {
@@ -73,7 +65,7 @@
       "people": {
       },
       "shirt": true,
-      "slots": 2,
+      "slots": 3,
       "start": 4
     }
   ],
@@ -137,14 +129,6 @@
   ],
   "Team Queuing": [
     {
-      "end": 1,
-      "people": {
-      },
-      "shirt": true,
-      "slots": 2,
-      "start": 1
-    },
-    {
       "end": 2,
       "people": {
       },
@@ -174,6 +158,40 @@
       },
       "shirt": true,
       "slots": 2,
+      "start": 5
+    }
+  ],
+  "Concessions": [
+    {
+      "end": 2,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 3,
+      "start": 2
+    },
+    {
+      "end": 3,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 4,
+      "start": 3
+    },
+    {
+      "end": 4,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 4,
+      "start": 4
+    },
+    {
+      "end": 5,
+      "people": {
+      },
+      "shirt": true,
+      "slots": 3,
       "start": 5
     }
   ]
