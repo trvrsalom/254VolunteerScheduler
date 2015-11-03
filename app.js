@@ -113,7 +113,7 @@ app.get("/api/reload", function(req, res) {
 })
 
 app.get('/api/blocks', function (rea, res) {
-  res.json(["Friday (2-6 pm)\t\u0000\u0000","Friday (6-9 pm)\t","Saturday (7-9 am)","Saturday (9 am-12 pm)","Saturday (12-3 pm)","Saturday (3-6 pm)","Saturday (6-8 pm)"]);  
+  res.json(["Friday (2-6 pm)\t\u0000\u0000","Friday (6-9 pm)\t","Saturday (7-9 am)","Saturday (9 am-12 pm)","Saturday (12-3 pm)","Saturday (3-6 pm)","Saturday (6-8 pm)"]);
 //res.json(savedBlocks);
 });
 
@@ -125,6 +125,22 @@ app.get('/api/student', function (req, res) {
 //JSON For parent table
 app.get('/api/parent', function (req, res) {
   res.json(parentData);
+});
+
+app.post('/api/nominate', function (req, res) {
+  var expects = ["name", "email"];
+  for (var i in expects) {
+    if (req.body[expects[i]] === undefined) {
+      res.json({status: "error", message: "invalid parameters."});
+      return;
+    }
+  }
+  connection.query('INSERT INTO judges (name, email) VALUES (\"'+req.body.name.replace(/[\\\*\?\^\$\[\]\(\)\{\}\/\'\#\:\=\|]/ig,"")+'\", \"'+req.body.email.replace(/[\\\*\?\^\$\[\]\(\)\{\}\/\'\#\:\=\|]/ig,"")+'\")', function(err, rows, fields) {
+    if (err) throw err;
+    console.log(req.body.email)
+    res.json({status: "OK"});
+  })
+
 });
 
 app.post('/api/register', function (req, res) {
@@ -240,7 +256,7 @@ function generateStudentOrParentData(which) {
 app.use(express.static('static'));
 
 //Start APP
-app.listen(80, "107.170.241.118");
+app.listen(80, "192.168.1.16");
 //console.log("Running on " + "107.170.241.118" + ":" + 80)
 //server.on('request', app);
-//server.listen("107.170.241.118", function () { console.log('Listening on ' + server.address().port) });
+//server.listen("192.168.1.16", function () { console.log('Listening on ' + server.address().port) });

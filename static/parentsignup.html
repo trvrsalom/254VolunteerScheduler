@@ -3,6 +3,7 @@
        <link rel="stylesheet" type="text/css" href="http://107.170.241.118/semantic/dist/semantic.min.css">
        <link rel="stylesheet" type="text/css" href="http://107.170.241.118/css/main.css">
        <title>BCP VEX Tournament - Parent Volunteer Signups</title>
+
     </head>
     <body>
         <div class="ui page grid">
@@ -11,8 +12,10 @@
 		    <h1 style="margin-bottom: 3px;">Bellarmine VEX Tournament - Parent Volunteer Signup</h1>
           <h3 style="margin-top: 0px;">November 20, 2015 - November 21, 2015</h3>
           <p>Hello parents,<br />
-	<br />            
-Our annual VEX tournament is coming up, and we would not be able to run the tournament without your help. Please sign up for whenever you are available, all help is appreciated.
+	        <br />
+          Our annual VEX tournament is coming up, and we would not be able to run the tournament without your help. Please sign up for whenever you are available, all help is appreciated.
+          <br /><br />
+          Also, if you know anyone who is or might be interested in helping out with judges or referees, please send an email to <a href="mailto:trevor@team254.com?Subject=Prospective Judge/Referee at the VEX Tournament">trevor@team254.com</a> or fill out <a onclick="$('.ui.nominate.modal').modal('show')">this form</a>.
           <br /><br />
           Thanks, <br />
           Trevor Salom<br />
@@ -23,8 +26,8 @@ Our annual VEX tournament is coming up, and we would not be able to run the tour
           <strong>Judge's Assistant:</strong> Help judges direct students and teams to enter judging room.<br />
           <strong>Sobrato Monitors:</strong> Make sure food doesn't enter the theater and direct spectators and teams.<br />
           <strong>Team Queuing:</strong> Directs students from the entrance of Sobrato to the Field Queuing areas. Prevent people without robots from entering the Queuing area.<br />
-          <strong>Concessions:</strong> Sell and serve food. <br />                    
-          <strong>Pit Admin:</strong> Checks in teams & volunteers. Assists team queuing from the pits, and helps other volunteers as necessary. <br />                    
+          <strong>Concessions:</strong> Sell and serve food. <br />
+          <strong>Pit Admin:</strong> Checks in teams & volunteers. Assists team queuing from the pits, and helps other volunteers as necessary. <br />
 
 <br /><a href="studentsignup.html" class="sub header">Go to the Student Volunteer Form</a>
 
@@ -37,7 +40,7 @@ Our annual VEX tournament is coming up, and we would not be able to run the tour
                 </div>
             </div>
         </div>
-        <div class="ui modal">
+        <div class="ui confirm modal">
           <i class="close icon"></i>
           <div class="header">
             Confirm Signup
@@ -85,11 +88,44 @@ Our annual VEX tournament is coming up, and we would not be able to run the tour
             </div>
           </div>
         </div>
+        <div class="ui nominate modal">
+          <i class="close icon"></i>
+          <div class="header">
+            Nominate a Judge/Referee
+          </div>
+          <div class="content">
+            <div class="description">
+              <p>If you think or know that someone is interested in judging or refereeing the VEX tournament, please fill out their information below. Please note that judges and referees should not be directly affiliated with the team.</p>
+                <div class="ui form" >
+                  <div class="two fields">
+                    <div class="field">
+                      <label>Name</label>
+                      <input type="text" id="jname" placeholder="Name">
+                    </div>
+                    <div class="field">
+                      <label>Email</label>
+                      <input type="email" id="jemail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="ui submit button" onclick="nominate()" id="submitButton">Submit</div>
+                  <div class="ui success message" id="nsuccess" style="display:none;">
+                        <div class="header">Success</div>
+                        <p>Thanks!</p>
+                  </div>
+                  <div class="ui error message" id="nerror" style="display:none;">
+                        <div class="header">Error</div>
+                        <p id="nerrormessage"></p>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
         <script type="text/javascript" src="http://107.170.241.118/js/jquery.min.js"></script>
         <script type="text/javascript" src="http://107.170.241.118/semantic/dist/semantic.min.js"></script>
+        <script>if(window.location.href.indexOf("nominate") > -1) { $(".ui.nominate.modal").modal('show'); }</script>
         <script>
             var roletype = "parent";
         </script>
-        <script type="text/javascript" src="http://107.170.241.118/js/script.js"></script>
+        <script type="text/javascript" src="/js/script.js"></script>
     </body>
 </html>

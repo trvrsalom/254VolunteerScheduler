@@ -12,6 +12,31 @@ ws.onmessage = function(data) {
     }
 }
 
+function nominate() {
+  $.ajax({
+    type: "POST",
+    url: "/api/nominate",
+    data: {
+        name: $("#jname").val(),
+        email: $("#jemail").val()
+    },
+    success: function(data) {
+      if(data["status"] == "OK") {
+          $("#nsuccess").show();
+      }
+      else {
+        $("#nerror").show()
+        $("#nerrormessage").html(data.message);
+      }
+    },
+    error: function(data) {
+      $("#nerror").show()
+      $("#nerrormessage").html("Failed to connect");
+    },
+    dataType: "json"
+  });
+}
+
 function enroll(shift_id, email, first, last, shirt, callback) {
     $.ajax({
       type: "POST",
@@ -57,7 +82,7 @@ function signup(timeslot, role, double, shiftid, shirt) {
                 $("#success").show();
 		gen();
 		setTimeout(function(){
-		    $('.ui.modal').modal('hide');
+		    $('.ui.confirm.modal').modal('hide');
 		    //$("input").val("");
 		}, 1000);
             } else {
@@ -77,7 +102,7 @@ function signup(timeslot, role, double, shiftid, shirt) {
 function gen() {
     $("#tablehead").html("");
     $("#tablebody").html("");
-    
+
     $.get('/api/blocks', function(data) {
         $("#tablehead").append("<th></th>")
         blocks = data;
@@ -85,9 +110,9 @@ function gen() {
             $("#tablehead").append("<th>" + data[block] + "</th>");
         }
     })
-    
+
     $.get('/api/' + roletype, function(data) {
-        
+
        var table = $("#tablebody");
        for(key in data) {
            var datarow = data[key];

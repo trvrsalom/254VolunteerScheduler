@@ -11,8 +11,10 @@
 		    <h1 style="margin-bottom: 3px;">Bellarmine VEX Tournament - Student Volunteer Signup</h1>
           <h3 style="margin: 0px;">November 20, 2015 - November 21, 2015</h3>
           <br /><p>Hello everyone, <br />
-	<br />          
-As a reminder, everyone on the team is required to attend the Bellarmine VEX Tournament. Those who are not on a VEX team are required to volunteer, and even if you are on a VEX team, you are encouraged to help out by volunteering for part of the day.
+	        <br />
+          As a reminder, everyone on the team is required to attend the Bellarmine VEX Tournament. Those who are not on a VEX drive team are required to volunteer, although they should talk to their VEX captains about when they should volunteer.
+          <br /><br />
+          Also, if you know anyone who is or might be interested in helping out with judges or referees, please send an email to <a href="mailto:trevor@team254.com?Subject=Prospective Judge/Referee at the VEX Tournament">trevor@team254.com</a> or fill out <a onclick="$('.ui.nominate.modal').modal('show')">this form</a>.
           <br /><br />
           Thanks, <br />
           Trevor Salom<br />
@@ -24,7 +26,7 @@ As a reminder, everyone on the team is required to attend the Bellarmine VEX Tou
           <strong>Field Technician:</strong> Receive teams, place them on the appropriate position on the field, and ensure their robot is connected and ready to compete. <br />
           <strong>Practice Field Manager:</strong> Make sure teams aren't leaving the practice field with game objects, area remains clean, people aren't throwing game objects, and teams take turns using the field. <br />
           <strong>Skills Field Assistant:</strong> Time skills challenges, help reset after each run. <br />
-          <strong>Pit Queuer:</strong> Remind teams to queue for their qualification matches.</p>                    
+          <strong>Pit Queuer:</strong> Remind teams to queue for their qualification matches.</p>
                     <a href="parentsignup.html" class="sub header">Go to the Parent Volunteer Form</a>
 
 	  <table class="ui unstackable celled structured table">
@@ -36,7 +38,7 @@ As a reminder, everyone on the team is required to attend the Bellarmine VEX Tou
                 </div>
             </div>
         </div>
-        <div class="ui modal">
+        <div class="ui confirm modal">
           <i class="close icon"></i>
           <div class="header">
             Confirm Signup
@@ -84,8 +86,41 @@ As a reminder, everyone on the team is required to attend the Bellarmine VEX Tou
             </div>
           </div>
         </div>
+        <div class="ui nominate modal">
+          <i class="close icon"></i>
+          <div class="header">
+            Nominate a Judge/Referee
+          </div>
+          <div class="content">
+            <div class="description">
+              <p>If you think or know that someone is interested in judging or refereeing the VEX tournament, please fill out their information below. Please note that judges and referees should not be directly affiliated with the team.</p>
+                <div class="ui form" >
+                  <div class="two fields">
+                    <div class="field">
+                      <label>Name</label>
+                      <input type="text" id="jname" placeholder="Name">
+                    </div>
+                    <div class="field">
+                      <label>Email</label>
+                      <input type="email" id="jemail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="ui submit button" onclick="nominate()">Submit</div>
+                  <div class="ui success message" id="nsuccess" style="display:none;">
+                        <div class="header">Success</div>
+                        <p>Thanks!</p>
+                  </div>
+                  <div class="ui error message" id="nerror" style="display:none;">
+                        <div class="header">Error</div>
+                        <p id="nerrormessage"></p>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="semantic/dist/semantic.min.js"></script>
+        <script>if(window.location.href.indexOf("nominate") > -1) { $(".ui.nominate.modal").modal('show'); }</script>
         <script>
             var roletype = "student";
         </script>
