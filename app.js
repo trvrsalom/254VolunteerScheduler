@@ -23,9 +23,9 @@ var savedBlocks = [];
 
 //Set up mysql connection
 var connection = mysql.createConnection({
-  host     : '',
-  user     : '',
-  password : '',
+  host     : '107.170.241.118',
+  user     : 'root',
+  password : '1234Five',
   database : 'signup'
 });
 
@@ -82,9 +82,7 @@ function init(cb) {
     },
     function (callback) {
       connection.query("SELECT * FROM header", function(err, rows, fields) {
-        for(var i in rows) {
-          savedBlocks.push(rows[i].text);
-        }
+        savedBlocks = rows;
         callback();
       })
     },
@@ -115,7 +113,8 @@ app.get("/api/reload", function(req, res) {
 })
 
 app.get('/api/blocks', function (rea, res) {
-  res.json(savedBlocks);
+  res.json(["Friday (2-6 pm)\t\u0000\u0000","Friday (6-9 pm)\t","Saturday (7-9 am)","Saturday (9 am-12 pm)","Saturday (12-3 pm)","Saturday (3-6 pm)","Saturday (6-8 pm)"]);  
+//res.json(savedBlocks);
 });
 
 //JSON For student table
@@ -241,7 +240,7 @@ function generateStudentOrParentData(which) {
 app.use(express.static('static'));
 
 //Start APP
-//app.listen(process.env.PORT, process.env.IP);
-console.log("Running on " + process.env.IP + ":" + process.env.PORT)
-server.on('request', app);
-server.listen(process.env.PORT, function () { console.log('Listening on ' + server.address().port) });
+app.listen(80, "107.170.241.118");
+//console.log("Running on " + "107.170.241.118" + ":" + 80)
+//server.on('request', app);
+//server.listen("107.170.241.118", function () { console.log('Listening on ' + server.address().port) });

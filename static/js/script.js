@@ -54,7 +54,12 @@ function signup(timeslot, role, double, shiftid, shirt) {
         enroll(shiftid, $("#email").val().replace(/[\\\*\?\^\$\[\]\(\)\{\}\/\'\#\:\=\|]/ig, ""), $("#fname").val().replace(/[\\\*\?\^\$\[\]\(\)\{\}\/\'\#\:\=\|]/ig, ""), $("#lname").val().replace(/[\\\*\?\^\$\[\]\(\)\{\}\/\'\#\:\=\|]/ig, ""), shirt == "true" ? $("#shirtsize").val() : "null", function(data) {
             console.log(data);
             if(data["status"] == "OK") {
-                $("#success").show()
+                $("#success").show();
+		gen();
+		setTimeout(function(){
+		    $('.ui.modal').modal('hide');
+		    //$("input").val("");
+		}, 1000);
             } else {
                 $("#error").show()
                 $("#errormessage").html(data.message);
@@ -102,7 +107,7 @@ function gen() {
                 } else if (celldata.people < celldata.max) {
                     row += "<td " + colspan + " onclick='signup(" + i + ", \"" + datarow.type + "\", " + double + ", \"" + celldata.id + "\"" +  ", \"" + celldata.shirt + "\")' style='cursor:pointer'>(" + celldata.people + "/" + celldata.max + ")</td>";
                 } else {
-                    row += "<td " + colspan + " >Full (" + celldata.people + "/" + celldata.max + ")</td>";
+                    row += "<td class='active' " + colspan + " >Full (" + celldata.people + "/" + celldata.max + ")</td>";
                 }
            }
            row+="</tr>"
