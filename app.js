@@ -23,9 +23,9 @@ var savedBlocks = [];
 
 //Set up mysql connection
 var connection = mysql.createConnection({
-  host     : '107.170.241.118',
+  host     : '',
   user     : 'root',
-  password : '1234Five',
+  password : '',
   database : 'signup'
 });
 
